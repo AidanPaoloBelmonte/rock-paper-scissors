@@ -20,25 +20,28 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
-  let humanChoiceID = humanChoice[0].charCodeAt(0);
-  let computerChoiceID = humanChoice[0].charCodeAt(0);
+  let humanChoiceF = humanChoice[0].toUpperCase() + humanChoice.slice(1);
+  let computerChoiceF =
+    computerChoice[0].toUpperCase() + computerChoice.slice(1);
 
-  if (humanChoiceID - computerChoiceID == 3) {
-    if (humanChoiceID < computerChoiceID) {
-      console.log(`You Win! {humanChoice} beats {computerChoice}!`);
+  let humanChoiceID = humanChoice[0].charCodeAt(0);
+  let computerChoiceID = computerChoice[0].charCodeAt(0);
+
+  if (Math.abs(humanChoiceID - computerChoiceID) == 3) {
+    if (humanChoiceID > computerChoiceID) {
+      console.log(`You Win! ${humanChoiceF} beats ${computerChoiceF}!`);
       humanScore++;
     } else {
-      console.log(`You Lose! {computerChoice} beats {humanChoice}!`);
+      console.log(`You Lose! ${computerChoiceF} beats ${humanChoiceF}!`);
       computerScore++;
     }
-  }
-  if (humanChoice < computerChoice) {
-    console.log(`You Win! {humanChoice} beats {computerChoice}!`);
+  } else if (humanChoice < computerChoice) {
+    console.log(`You Win! ${humanChoiceF} beats ${computerChoiceF}!`);
     humanScore++;
   } else if (humanChoice > computerChoice) {
-    console.log(`You Lose! {computerChoice} beats {humanChoice}!`);
+    console.log(`You Lose! ${computerChoiceF} beats ${humanChoiceF}!`);
     computerScore++;
   } else {
-    console.log(`You Tied! {humanChoice} is the same as {computerChoice}!`);
+    console.log(`You Tied! ${humanChoiceF} is the same as ${computerChoiceF}!`);
   }
 }
