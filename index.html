@@ -1,10 +1,25 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <script src="./scripts/script.js"></script>
+        <script src="./scripts/script.js" defer></script>
 
         <meta charset="UTF-8" />
         <title>Rock Paper Scissors</title>
     </head>
-    <body></body>
+    <body>
+        <p>Choose your play:</p>
+        <div id="choice-box">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
+        <div>
+            <p id="result">Choose what to play, and the match will start!</p>
+            <p>
+                <span id="player-score">0</span>
+                -
+                <span id="computer-score">0</span>
+            </p>
+        </div>
+    </body>
 </html>
